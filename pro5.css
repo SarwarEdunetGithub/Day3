@@ -88,6 +88,35 @@ body{
     transform: translateY(-10px) rotateX(2deg);
 }
 img{
+    width: 100%;
+}
+.hero-image{
+    height: 260px;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    border-radius: 0 42px 42px 0;
+    animation: page-enter .8s ease both;
+}
+.base-image{
+    display: block;
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+}
+.cat-animation{
+    display: block;
+    height: 125px;
+    bottom: 18px;
+    object-fit: contain;
+    position: absolute;
+    right: 32px;
+    width: 155px;
+    animation: cat-float 2.8s ease-in-out infinite;
+    filter: drop-shadow(0 12px 10px rgba(0, 50, 0, .3));
+}
+.card img{
     display: block;
     margin: 0 auto;
     width: 60%;
@@ -97,7 +126,7 @@ img{
     margin-top: 15px;
     animation: photo-pop .7s .35s both;
 }
-img:hover{
+.card img:hover{
     transform: scale(1.2);
 }
 .content{
@@ -206,6 +235,14 @@ img:hover{
     to{
         opacity: 1;
         transform: scale(1) rotate(0deg);
+    }
+}
+@keyframes cat-float{
+    0%, 100%{
+        transform: translateY(0) rotate(-2deg);
+    }
+    50%{
+        transform: translateY(-14px) rotate(2deg);
     }
 }
 @media (prefers-reduced-motion: reduce){
